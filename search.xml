@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo 初探3：Hexo 是基于模板和 yml 配置的</title>
-    <url>/2025/09/25/3/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>NexT</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo 初探1：如何添加自己的 JS 文件</title>
     <url>/2025/09/24/1/</url>
     <content><![CDATA[在 Hexo 中添加自己的 JS 文件之前，需要先理解 Hexo 对不同类型文件的处理原理。
@@ -73,6 +61,36 @@ JS 执行顺序Hexo 核心 JS -&gt; 主题自带 JS -&gt; 第三方插件 JS -&g
 
 ⚠️ CSS 同理 JS
 
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 初探2：hexo s --debug</title>
+    <url>/2025/09/25/2/</url>
+    <content><![CDATA[Hexo 静态博客Hexo 生成的是静态的 HTML / CSS / JS 文件。当你执行以下命令：
+
+hexo g (generate)hexo s (server)
+
+生成静态文件 将 Markdown、模板文件等必要文件渲染或复制到 public/ 目录下。
+启动本地服务器 启动一个 HTTP 服务，返回 public/ 目录下的文件。
+
+每次更改后的处理每次修改内容时，你需要重新向服务器获取文件，而不是热更新。
+注意：
+
+hexo s 默认带 —watch，会监控文件变化并重新生成静态文件。
+
+但是浏览器中获取的仍然是上一次生成的内容，因此需要手动刷新以获取最新结果。
+
+
+—debug 参数不会改变 Hexo 功能，只会打印更多日志，方便调试。
+hexo s --debug
+这样可以帮助你排查生成或启动服务器时可能出现的问题
 ]]></content>
       <categories>
         <category>Hexo</category>
@@ -174,54 +192,6 @@ type 属性表示不同的输入框类型
 value 输入默认值
 placeholder 提示占位信息
 ]]></content>
-  </entry>
-  <entry>
-    <title>Hexo 初探2：hexo s --debug</title>
-    <url>/2025/09/25/2/</url>
-    <content><![CDATA[Hexo 静态博客Hexo 生成的是静态的 HTML / CSS / JS 文件。当你执行以下命令：
-
-hexo g (generate)hexo s (server)
-
-生成静态文件 将 Markdown、模板文件等必要文件渲染或复制到 public/ 目录下。
-启动本地服务器 启动一个 HTTP 服务，返回 public/ 目录下的文件。
-
-每次更改后的处理每次修改内容时，你需要重新向服务器获取文件，而不是热更新。
-注意：
-
-hexo s 默认带 —watch，会监控文件变化并重新生成静态文件。
-
-但是浏览器中获取的仍然是上一次生成的内容，因此需要手动刷新以获取最新结果。
-
-
-—debug 参数不会改变 Hexo 功能，只会打印更多日志，方便调试。
-hexo s --debug
-这样可以帮助你排查生成或启动服务器时可能出现的问题
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>NexT</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>React 概念</title>
-    <url>/2025/09/26/5/</url>
-    <content><![CDATA[不直接操纵 DOM =&gt; React 是声明式的
-
-如何更新组件 view : In React, a view is updated by re-rendering the component. React calls the component function again简单理解： 渲染组件 =&gt; 创建一个新的组件替换原来的组件State is preserved throughout re-renders状态被重置，当组件完全从 UI 中消失，这个叫做取消挂载 卸载 unmounting当 state 更新的时候会触发 re-render 所以当想更新 view 直接更新 stateReact reacts to state changes by re-rendering the UI
-const [state, setState] = useState;
-React dev tools build react component tree… props,hooks,rendered by,可以任意调试状态
-How react work behind the scenes
-组件： 是一段 UI 的描述，是一个函数返回 React elements，理解为一个模板组件实例：当我们使用 components 时候创建的实例，是 component 的实际表现，有自己的生命周期(born,live,die)元素：每一个 组件实例 都会返回一个或多个 React.elementex: JSX ——-convert——&gt; React.createElement() function callsA React element is the result of these function callsReact element 是包含所有要创建一个 DOM 元素的必要信息的一种 JS 对象 不直接和 DOM 操作 和 DOM 无关，只是最终为了创建 DOM 的对象React element =&gt; DOM element 最终的视觉效果
-]]></content>
-      <categories>
-        <category>前端八股</category>
-      </categories>
-      <tags>
-        <tag>八股文</tag>
-      </tags>
   </entry>
   <entry>
     <title>网络概念</title>
@@ -333,6 +303,36 @@ TCP 三次握手
       </tags>
   </entry>
   <entry>
+    <title>React 概念</title>
+    <url>/2025/09/26/5/</url>
+    <content><![CDATA[不直接操纵 DOM =&gt; React 是声明式的
+
+如何更新组件 view : In React, a view is updated by re-rendering the component. React calls the component function again简单理解： 渲染组件 =&gt; 创建一个新的组件替换原来的组件State is preserved throughout re-renders状态被重置，当组件完全从 UI 中消失，这个叫做取消挂载 卸载 unmounting当 state 更新的时候会触发 re-render 所以当想更新 view 直接更新 stateReact reacts to state changes by re-rendering the UI
+const [state, setState] = useState;
+React dev tools build react component tree… props,hooks,rendered by,可以任意调试状态
+How react work behind the scenes
+组件： 是一段 UI 的描述，是一个函数返回 React elements，理解为一个模板组件实例：当我们使用 components 时候创建的实例，是 component 的实际表现，有自己的生命周期(born,live,die)元素：每一个 组件实例 都会返回一个或多个 React.elementex: JSX ——-convert——&gt; React.createElement() function callsA React element is the result of these function callsReact element 是包含所有要创建一个 DOM 元素的必要信息的一种 JS 对象 不直接和 DOM 操作 和 DOM 无关，只是最终为了创建 DOM 的对象React element =&gt; DOM element 最终的视觉效果
+]]></content>
+      <categories>
+        <category>前端八股</category>
+      </categories>
+      <tags>
+        <tag>八股文</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 初探3：Hexo 是基于模板和 yml 配置的</title>
+    <url>/2025/09/25/3/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>React Hook</title>
     <url>/2025/09/26/6/</url>
     <content><![CDATA[React Hooks 笔记什么是 React Hooks？
@@ -388,30 +388,6 @@ const [A, setA] = useState(23);if (A === 23) const [B, setB] = useState(&#x27;&#
       </categories>
       <tags>
         <tag>八股文</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>项目相关</title>
-    <url>/2025/09/30/8/</url>
-    <content><![CDATA[项目必须做 git 版本控制，不然添加一个新的功能，可能会把项目搞崩溃，并不是所有的命令，所有的原理一上来都明白的
-
-但是不要写屎代码，搞明白原理很重要
-做 gitignore 有模板，直接找模板就行了
-做新功能的时候，如果不知道怎么做，最好的办法就是去查官方文档，官方文档会推荐你怎么做
-并且学会检索。可以根据主页检索，你要做哪个主页的功能，就去看哪个页面的配置文件，直接检索就是你要做的功能按照功能分类等方式
-按照 URL 分类是一个不错的方式
-找不到的时候，再去考虑别的
-可以先做官方文档的默认 demo，激活一下 demo，看看能不能用，然后再自定义
-添加分页的原理： 当执行 hexo g, hexo 会调用 generator 插件。hexo-generator-index 读取 _config.yml 里的 per_page 参数，把文章组切成 N 份，分别生成对应的 index.html,page/2/index.html …
-这些分页信息 page.prev page.next page.total 会渲染到模板的 locals 中
-所以配置文件只是给插件提供参数,真正干活的是插件和主题模板
-所以前端的各种组件，写的好的包都是在原生 JS 上做包装，没有什么神秘的，比如 router 配件可以在 window.location 上做封装
-]]></content>
-      <categories>
-        <category>项目</category>
-      </categories>
-      <tags>
-        <tag>项目</tag>
       </tags>
   </entry>
   <entry>
@@ -503,6 +479,30 @@ unmount 过程: 标记需要移除的虚拟 DOM -&gt; 移除真实 DOM -&gt; use
       </categories>
       <tags>
         <tag>算法题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>项目相关</title>
+    <url>/2025/09/30/8/</url>
+    <content><![CDATA[项目必须做 git 版本控制，不然添加一个新的功能，可能会把项目搞崩溃，并不是所有的命令，所有的原理一上来都明白的
+
+但是不要写屎代码，搞明白原理很重要
+做 gitignore 有模板，直接找模板就行了
+做新功能的时候，如果不知道怎么做，最好的办法就是去查官方文档，官方文档会推荐你怎么做
+并且学会检索。可以根据主页检索，你要做哪个主页的功能，就去看哪个页面的配置文件，直接检索就是你要做的功能按照功能分类等方式
+按照 URL 分类是一个不错的方式
+找不到的时候，再去考虑别的
+可以先做官方文档的默认 demo，激活一下 demo，看看能不能用，然后再自定义
+添加分页的原理： 当执行 hexo g, hexo 会调用 generator 插件。hexo-generator-index 读取 _config.yml 里的 per_page 参数，把文章组切成 N 份，分别生成对应的 index.html,page/2/index.html …
+这些分页信息 page.prev page.next page.total 会渲染到模板的 locals 中
+所以配置文件只是给插件提供参数,真正干活的是插件和主题模板
+所以前端的各种组件，写的好的包都是在原生 JS 上做包装，没有什么神秘的，比如 router 配件可以在 window.location 上做封装
+]]></content>
+      <categories>
+        <category>项目</category>
+      </categories>
+      <tags>
+        <tag>项目</tag>
       </tags>
   </entry>
 </search>
