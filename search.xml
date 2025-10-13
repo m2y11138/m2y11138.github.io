@@ -71,18 +71,6 @@ JS 执行顺序Hexo 核心 JS -&gt; 主题自带 JS -&gt; 第三方插件 JS -&g
       </tags>
   </entry>
   <entry>
-    <title>Hexo 初探3：Hexo 是基于模板和 yml 配置的</title>
-    <url>/2025/09/25/3/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>NexT</tag>
-      </tags>
-  </entry>
-  <entry>
     <title></title>
     <url>/2025/10/04/10/</url>
     <content><![CDATA[选择器简单选择器： 全局选择器 ID选择器 类选择器 伪类选择器 属性选择器 元素选择器 伪元素选择器
@@ -176,27 +164,9 @@ placeholder 提示占位信息
 ]]></content>
   </entry>
   <entry>
-    <title>Hexo 初探2：hexo s --debug</title>
-    <url>/2025/09/25/2/</url>
-    <content><![CDATA[Hexo 静态博客Hexo 生成的是静态的 HTML / CSS / JS 文件。当你执行以下命令：
-
-hexo g (generate)hexo s (server)
-
-生成静态文件 将 Markdown、模板文件等必要文件渲染或复制到 public/ 目录下。
-启动本地服务器 启动一个 HTTP 服务，返回 public/ 目录下的文件。
-
-每次更改后的处理每次修改内容时，你需要重新向服务器获取文件，而不是热更新。
-注意：
-
-hexo s 默认带 —watch，会监控文件变化并重新生成静态文件。
-
-但是浏览器中获取的仍然是上一次生成的内容，因此需要手动刷新以获取最新结果。
-
-
-—debug 参数不会改变 Hexo 功能，只会打印更多日志，方便调试。
-hexo s --debug
-这样可以帮助你排查生成或启动服务器时可能出现的问题
-]]></content>
+    <title>Hexo 初探3：Hexo 是基于模板和 yml 配置的</title>
+    <url>/2025/09/25/3/</url>
+    <content><![CDATA[]]></content>
       <categories>
         <category>Hexo</category>
       </categories>
@@ -312,6 +282,36 @@ TCP 三次握手
       </categories>
       <tags>
         <tag>八股文</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 初探2：hexo s --debug</title>
+    <url>/2025/09/25/2/</url>
+    <content><![CDATA[Hexo 静态博客Hexo 生成的是静态的 HTML / CSS / JS 文件。当你执行以下命令：
+
+hexo g (generate)hexo s (server)
+
+生成静态文件 将 Markdown、模板文件等必要文件渲染或复制到 public/ 目录下。
+启动本地服务器 启动一个 HTTP 服务，返回 public/ 目录下的文件。
+
+每次更改后的处理每次修改内容时，你需要重新向服务器获取文件，而不是热更新。
+注意：
+
+hexo s 默认带 —watch，会监控文件变化并重新生成静态文件。
+
+但是浏览器中获取的仍然是上一次生成的内容，因此需要手动刷新以获取最新结果。
+
+
+—debug 参数不会改变 Hexo 功能，只会打印更多日志，方便调试。
+hexo s --debug
+这样可以帮助你排查生成或启动服务器时可能出现的问题
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
       </tags>
   </entry>
   <entry>
